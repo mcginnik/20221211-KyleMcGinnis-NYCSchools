@@ -57,6 +57,10 @@ struct WebService {
             }
             
             do {
+                let newData = try? JSONSerialization.jsonObject(with: data, options: [])
+                print(newData)
+
+                
                 let result = try JSONDecoder().decode(T.self, from: data)
                 completion(.success(result))
             } catch {

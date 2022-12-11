@@ -8,5 +8,54 @@
 import Foundation
 
 struct SAT {
+    let id: String
+    let dbn: String
+    let numberOfStudents: Int
+    let criticialReadingAvgScore: Double
+    let mathAvgScore: Double
+    let writingAvgScore: Double
+    let schoolName: String
+
+    // MARK: Lifecycle
+
+    init(id: String, dbn: String, numberOfStudents: Int, criticialReadingAvgScore: Double, mathAvgScore: Double, writingAvgScore: Double, schoolName: String) {
+        self.id = id
+        self.dbn = dbn
+        self.numberOfStudents = numberOfStudents
+        self.criticialReadingAvgScore = criticialReadingAvgScore
+        self.mathAvgScore = mathAvgScore
+        self.writingAvgScore = writingAvgScore
+        self.schoolName = schoolName
+    }
+    
+    
+    init(from decoder: Decoder) throws {
+
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+
+        id = (try? values.decode(String.self, forKey: .id)) ?? UUID().uuidString
+        dbn = try values.decode(String.self, forKey: .dbn)
+        numberOfStudents = Int(try values.decode(String.self, forKey: .num_of_sat_test_takers)) ?? 0
+        criticialReadingAvgScore = Double(try values.decode(String.self, forKey: .sat_critical_reading_avg_score)) ?? 0
+        mathAvgScore = Double(try values.decode(String.self, forKey: .sat_math_avg_score)) ?? 0
+        writingAvgScore = Double(try values.decode(String.self, forKey: .sat_writing_avg_score)) ?? 0
+        schoolName = try values.decode(String.self, forKey: .school_name)
+    }
+    
+    
+}
+
+
+extension SAT: Decodable {
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case dbn
+        case num_of_sat_test_takers
+        case sat_critical_reading_avg_score
+        case sat_math_avg_score
+        case sat_writing_avg_score
+        case school_name
+    }
     
 }

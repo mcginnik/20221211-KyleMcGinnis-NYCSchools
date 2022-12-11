@@ -97,29 +97,30 @@ class SchoolDetailViewModel: ObservableObject {
     }
     
     @Published var SATs: [SAT] = []
-            
+           
+    // MARK: Lifecycle
+    
     init(school: School){
         self.school = school
+        fetchSchoolDetail()
     }
+    
+    // MARK: API
     
     private func fetchSchoolDetail(){
-//        isLoading = true
-//        SchoolSearchService.shared.findSchools { [weak self] res in
-//            DispatchQueue.main.async {
-//                switch res {
-//                case .success(let schools):
-//                    self?.schools = schools
-//                case .failure(let error):
-//                    print(error)
-//                }
-//                self?.isLoading = false
-//            }
-//        }
+        isLoading = true
+        SchoolSearchService.shared.fetchSATs(for: school) { [weak self] res in
+            DispatchQueue.main.async {
+                switch res {
+                case .success(let sats):
+                    self?.SATs = sats
+                case .failure(let error):
+                    print(error)
+                }
+                self?.isLoading = false
+            }
+        }
     }
     
-//    func didTap(_ school: School){
-//        Logging.LogMe("... \(school.name)")
-//        delegate?.didTap(school)
-//    }
     
 }

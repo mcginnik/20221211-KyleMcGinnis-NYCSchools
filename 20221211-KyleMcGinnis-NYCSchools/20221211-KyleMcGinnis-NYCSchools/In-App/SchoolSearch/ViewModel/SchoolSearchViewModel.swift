@@ -25,7 +25,7 @@ class SchoolSearchViewModel: ObservableObject {
     
     private func fetchSchools(){
         isLoading = true
-        SchoolSearchService.shared.findSchools { [weak self] res in
+        SchoolSearchService.shared.fetchSchools { [weak self] res in
             DispatchQueue.main.async {
                 switch res {
                 case .success(let schools):
