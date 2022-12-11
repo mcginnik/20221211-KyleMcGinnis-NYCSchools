@@ -111,7 +111,7 @@ class SchoolDetailViewModel: ObservableObject {
     
     // MARK: API
     
-    private func fetchSchoolDetail(){
+    func fetchSchoolDetail(completion: @escaping (Result<[SAT], Error>) -> Void = { _ in }){
         isLoading = true
         SchoolSearchService.shared.fetchSATs(for: school) { [weak self] res in
             DispatchQueue.main.async {
@@ -121,6 +121,7 @@ class SchoolDetailViewModel: ObservableObject {
                 case .failure(let error):
                     print(error)
                 }
+                completion(res)
                 self?.isLoading = false
             }
         }

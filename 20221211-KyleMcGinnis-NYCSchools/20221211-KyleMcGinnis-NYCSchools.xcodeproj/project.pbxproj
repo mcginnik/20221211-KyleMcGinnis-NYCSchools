@@ -37,6 +37,7 @@
 		A7CEA6B629465637008272BC /* SAT.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CEA6B529465637008272BC /* SAT.swift */; };
 		A7CEA6B829465F46008272BC /* MapLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CEA6B729465F46008272BC /* MapLocation.swift */; };
 		A7CEA6BA29466AD4008272BC /* SchoolInfoRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CEA6B929466AD4008272BC /* SchoolInfoRow.swift */; };
+		A7CEA6BD2946734B008272BC /* SchoolSearchMockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CEA6BC2946734B008272BC /* SchoolSearchMockService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,7 @@
 		A7CEA6B529465637008272BC /* SAT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SAT.swift; sourceTree = "<group>"; };
 		A7CEA6B729465F46008272BC /* MapLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapLocation.swift; sourceTree = "<group>"; };
 		A7CEA6B929466AD4008272BC /* SchoolInfoRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolInfoRow.swift; sourceTree = "<group>"; };
+		A7CEA6BC2946734B008272BC /* SchoolSearchMockService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolSearchMockService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -299,6 +301,7 @@
 		A711ED2F29462E4400BBD1FC /* API */ = {
 			isa = PBXGroup;
 			children = (
+				A7CEA6BB29467326008272BC /* SchoolSearchMockService */,
 				A711ED3229462E5400BBD1FC /* SchoolSearchWebService */,
 				A711ED3029462E5000BBD1FC /* SchoolSearchService.swift */,
 			);
@@ -396,6 +399,14 @@
 				A7CEA6B32946543A008272BC /* ImageConstants.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		A7CEA6BB29467326008272BC /* SchoolSearchMockService */ = {
+			isa = PBXGroup;
+			children = (
+				A7CEA6BC2946734B008272BC /* SchoolSearchMockService.swift */,
+			);
+			path = SchoolSearchMockService;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -533,6 +544,7 @@
 				A711ED422946410600BBD1FC /* SchoolTileView.swift in Sources */,
 				A711ECE629462A2700BBD1FC /* AppDelegate.swift in Sources */,
 				A711ED3D2946307600BBD1FC /* SchoolSearchWebService.swift in Sources */,
+				A7CEA6BD2946734B008272BC /* SchoolSearchMockService.swift in Sources */,
 				A7CEA6B229465127008272BC /* SchoolDetailViewModel.swift in Sources */,
 				A7CEA6AE29465116008272BC /* SchoolDetailViewController.swift in Sources */,
 				A711ED3829462F4C00BBD1FC /* Logging.swift in Sources */,

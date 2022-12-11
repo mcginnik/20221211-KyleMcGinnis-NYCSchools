@@ -23,7 +23,7 @@ class SchoolSearchViewModel: ObservableObject {
         fetchSchools()
     }
     
-    private func fetchSchools(){
+    func fetchSchools(completion: @escaping (Result<[School], Error>) -> Void = { _ in }){
         isLoading = true
         SchoolSearchService.shared.fetchSchools { [weak self] res in
             DispatchQueue.main.async {
@@ -33,6 +33,7 @@ class SchoolSearchViewModel: ObservableObject {
                 case .failure(let error):
                     print(error)
                 }
+                completion(res)
                 self?.isLoading = false
             }
         }
