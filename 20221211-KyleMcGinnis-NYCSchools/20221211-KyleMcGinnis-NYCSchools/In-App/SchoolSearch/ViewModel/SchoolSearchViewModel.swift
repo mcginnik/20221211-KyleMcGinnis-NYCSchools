@@ -8,10 +8,16 @@
 import Foundation
 import SwiftUI
 
+protocol SchoolSearchDelegate: AnyObject {
+    func didTap(_ school: School)
+}
+
 class SchoolSearchViewModel: ObservableObject {
     
     @Published var schools: [School] = []
     @Published var isLoading: Bool = false
+    
+    weak var delegate: SchoolSearchDelegate?
     
     init(){
         fetchSchools()
@@ -34,6 +40,7 @@ class SchoolSearchViewModel: ObservableObject {
     
     func didTap(_ school: School){
         Logging.LogMe("... \(school.name)")
+        delegate?.didTap(school)
     }
     
 }

@@ -30,9 +30,28 @@ class SchoolSearchViewController: UIViewController {
     }
     
     private func setupHostingVC(){
+        viewModel.delegate = self
         let vc = SchoolSearchView(viewModel: viewModel)
         let hostingVC = UIHostingController(rootView: vc)
         add(hostingVC, to: view)
     }
+    
+    // MARK: Navigation
+    /// Ideally we would have a robust Coordinator setup handling navigation responsibilities but for now this is fine
+    
+    func presentSchoolDetail(with school: School){
+        Logging.LogMe("...")
+        let vc = SchoolDetailViewController(viewModel: .init(school: school))
+        let nav = UINavigationController(rootViewController: vc)
+        navigationController?.present(nav, animated: true)
+    }
 
+}
+
+extension SchoolSearchViewController: SchoolSearchDelegate {
+    func didTap(_ school: School) {
+        self.presentSchoolDetail(with: school)
+    }
+    
+    
 }

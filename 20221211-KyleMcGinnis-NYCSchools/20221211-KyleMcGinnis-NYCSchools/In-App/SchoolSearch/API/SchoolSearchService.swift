@@ -16,6 +16,8 @@ class SchoolSearchService {
     static let shared = SchoolSearchService()
     
     let schoolListURLString = "\(AppConfig.shared.baseURLString)/resource/s3k6-pzi2.json"
+    /// Allowing for Dependency injection here, calling the injected service instead of directly in SchoolSearchService so you can easily swap out if need be
+    /// Would instead have this be an automatic static injection setup so that all services are set at complie time, but this is a simple way of doing it for now
     var injected: SchoolSearchServiceProtocol?
     
     private init(){}

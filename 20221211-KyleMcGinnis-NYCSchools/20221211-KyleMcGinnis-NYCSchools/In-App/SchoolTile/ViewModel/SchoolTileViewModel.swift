@@ -21,7 +21,7 @@ class SchoolTileViewModel: ObservableObject {
     }
     
     var imageURL: URL? {
-        return URL(string: "https://static.vecteezy.com/system/resources/previews/002/206/174/original/school-building-icon-free-vector.jpg")
+        return URL(string: ImageConstants.collegeLogoImageURLString)
     }
     
     init(school: School){

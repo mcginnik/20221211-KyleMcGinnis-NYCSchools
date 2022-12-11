@@ -29,6 +29,13 @@
 		A711ED47294641EA00BBD1FC /* SchoolTileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A711ED46294641EA00BBD1FC /* SchoolTileViewModel.swift */; };
 		A711ED4E294643DC00BBD1FC /* TileModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A711ED4D294643DC00BBD1FC /* TileModifier.swift */; };
 		A711ED512946493800BBD1FC /* SchoolSearchConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A711ED502946493800BBD1FC /* SchoolSearchConstants.swift */; };
+		A7CEA6AC2946500F008272BC /* ColorConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CEA6AB2946500F008272BC /* ColorConstants.swift */; };
+		A7CEA6AE29465116008272BC /* SchoolDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CEA6AD29465116008272BC /* SchoolDetailViewController.swift */; };
+		A7CEA6B02946511E008272BC /* SchoolDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CEA6AF2946511E008272BC /* SchoolDetailView.swift */; };
+		A7CEA6B229465127008272BC /* SchoolDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CEA6B129465127008272BC /* SchoolDetailViewModel.swift */; };
+		A7CEA6B42946543A008272BC /* ImageConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CEA6B32946543A008272BC /* ImageConstants.swift */; };
+		A7CEA6B629465637008272BC /* SAT.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CEA6B529465637008272BC /* SAT.swift */; };
+		A7CEA6B829465F46008272BC /* MapLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CEA6B729465F46008272BC /* MapLocation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +82,13 @@
 		A711ED46294641EA00BBD1FC /* SchoolTileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolTileViewModel.swift; sourceTree = "<group>"; };
 		A711ED4D294643DC00BBD1FC /* TileModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileModifier.swift; sourceTree = "<group>"; };
 		A711ED502946493800BBD1FC /* SchoolSearchConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolSearchConstants.swift; sourceTree = "<group>"; };
+		A7CEA6AB2946500F008272BC /* ColorConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorConstants.swift; sourceTree = "<group>"; };
+		A7CEA6AD29465116008272BC /* SchoolDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolDetailViewController.swift; sourceTree = "<group>"; };
+		A7CEA6AF2946511E008272BC /* SchoolDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolDetailView.swift; sourceTree = "<group>"; };
+		A7CEA6B129465127008272BC /* SchoolDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolDetailViewModel.swift; sourceTree = "<group>"; };
+		A7CEA6B32946543A008272BC /* ImageConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageConstants.swift; sourceTree = "<group>"; };
+		A7CEA6B529465637008272BC /* SAT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SAT.swift; sourceTree = "<group>"; };
+		A7CEA6B729465F46008272BC /* MapLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapLocation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,6 +255,7 @@
 		A711ED2029462BF400BBD1FC /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				A7CEA6B129465127008272BC /* SchoolDetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -248,6 +263,7 @@
 		A711ED2129462BF800BBD1FC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A7CEA6AF2946511E008272BC /* SchoolDetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -255,6 +271,7 @@
 		A711ED2229462BFC00BBD1FC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				A7CEA6AD29465116008272BC /* SchoolDetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -297,6 +314,8 @@
 			isa = PBXGroup;
 			children = (
 				A711ED3429462EC700BBD1FC /* School.swift */,
+				A7CEA6B529465637008272BC /* SAT.swift */,
+				A7CEA6B729465F46008272BC /* MapLocation.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -370,6 +389,8 @@
 			isa = PBXGroup;
 			children = (
 				A711ED502946493800BBD1FC /* SchoolSearchConstants.swift */,
+				A7CEA6AB2946500F008272BC /* ColorConstants.swift */,
+				A7CEA6B32946543A008272BC /* ImageConstants.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -508,6 +529,8 @@
 				A711ED422946410600BBD1FC /* SchoolTileView.swift in Sources */,
 				A711ECE629462A2700BBD1FC /* AppDelegate.swift in Sources */,
 				A711ED3D2946307600BBD1FC /* SchoolSearchWebService.swift in Sources */,
+				A7CEA6B229465127008272BC /* SchoolDetailViewModel.swift in Sources */,
+				A7CEA6AE29465116008272BC /* SchoolDetailViewController.swift in Sources */,
 				A711ED3829462F4C00BBD1FC /* Logging.swift in Sources */,
 				A711ED3529462EC700BBD1FC /* School.swift in Sources */,
 				A711ED1A29462B9E00BBD1FC /* WebService.swift in Sources */,
@@ -517,8 +540,13 @@
 				A711ED4E294643DC00BBD1FC /* TileModifier.swift in Sources */,
 				A711ED2A29462C8E00BBD1FC /* SchoolSearchViewController.swift in Sources */,
 				A711ED512946493800BBD1FC /* SchoolSearchConstants.swift in Sources */,
+				A7CEA6B42946543A008272BC /* ImageConstants.swift in Sources */,
 				A711ECE829462A2700BBD1FC /* SceneDelegate.swift in Sources */,
+				A7CEA6B02946511E008272BC /* SchoolDetailView.swift in Sources */,
 				A711ED3B29462F6800BBD1FC /* AppConfig.swift in Sources */,
+				A7CEA6B829465F46008272BC /* MapLocation.swift in Sources */,
+				A7CEA6AC2946500F008272BC /* ColorConstants.swift in Sources */,
+				A7CEA6B629465637008272BC /* SAT.swift in Sources */,
 				A711ED2E29462DE000BBD1FC /* UIViewController+Add.swift in Sources */,
 				A711ED2829462C2A00BBD1FC /* SchoolSearchViewModel.swift in Sources */,
 			);

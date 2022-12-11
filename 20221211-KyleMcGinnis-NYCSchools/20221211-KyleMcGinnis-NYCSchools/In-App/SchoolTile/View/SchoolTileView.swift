@@ -28,7 +28,7 @@ struct SchoolTileView: View {
             case .success(let image):
                 image
                     .resizable()
-                    .scaledToFill()
+                    .scaledToFit()
             case .failure:
                 Image(systemName: "photo")
             @unknown default:
@@ -71,6 +71,7 @@ struct SchoolTileView: View {
                             Spacer()
                             imageView
                                 .frame(width: 80, height: 80)
+                                .clipped()
                             Spacer()
                         }
                         description
