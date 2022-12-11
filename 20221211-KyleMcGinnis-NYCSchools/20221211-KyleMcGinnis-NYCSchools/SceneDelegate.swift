@@ -17,7 +17,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let window = UIWindow(windowScene: windowScene)
         
-        window.rootViewController = UINavigationController(rootViewController: ViewController())
+        setupServices()
+        
+        window.rootViewController = UINavigationController(rootViewController: SchoolSearchViewController())
         
         self.window = window
         window.makeKeyAndVisible()
@@ -50,6 +52,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Called as the scene transitions from the foreground to the background.
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
+    }
+    
+    private func setupServices(){
+        SchoolSearchService.setup(with: SchoolSearchWebService())
     }
 
 
