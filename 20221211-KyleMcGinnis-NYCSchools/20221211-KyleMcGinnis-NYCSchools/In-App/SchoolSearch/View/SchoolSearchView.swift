@@ -21,7 +21,7 @@ struct SchoolSearchView: View {
     }
     
     var failedSearchView: some View {
-        Text("Failed to find schools...")
+        Text(SchoolSearchConstants.searchFailDescription)
     }
     
     var body: some View {
@@ -29,13 +29,15 @@ struct SchoolSearchView: View {
             loadingView
         } else {
             if viewModel.schools.count > 0 {
-                SchoolGridView(schools: viewModel.schools) { school in
-                    print("did tap me \(school.name)")
-                }
+                SchoolGridView(schools: viewModel.schools, didTap: didTap)
             } else {
                 failedSearchView
             }
         }
+    }
+    
+    func didTap(school: School){
+        viewModel.didTap(school)
     }
 }
 

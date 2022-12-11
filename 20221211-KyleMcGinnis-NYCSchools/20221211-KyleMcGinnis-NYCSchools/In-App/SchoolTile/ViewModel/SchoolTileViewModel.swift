@@ -21,7 +21,7 @@ class SchoolTileViewModel: ObservableObject {
     }
     
     var imageURL: URL? {
-        return URL(string: "https://static.vecteezy.com/system/resources/thumbnails/004/297/596/small/education-logo-open-book-dictionary-textbook-or-notebook-with-sunrice-icon-modern-emblem-idea-concept-design-for-business-libraries-schools-universities-educational-courses-vector.jpg")
+        return URL(string: "https://static.vecteezy.com/system/resources/previews/002/206/174/original/school-building-icon-free-vector.jpg")
     }
     
     init(school: School){

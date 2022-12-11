@@ -28,6 +28,7 @@
 		A711ED442946411000BBD1FC /* SchoolGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A711ED432946411000BBD1FC /* SchoolGridView.swift */; };
 		A711ED47294641EA00BBD1FC /* SchoolTileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A711ED46294641EA00BBD1FC /* SchoolTileViewModel.swift */; };
 		A711ED4E294643DC00BBD1FC /* TileModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = A711ED4D294643DC00BBD1FC /* TileModifier.swift */; };
+		A711ED512946493800BBD1FC /* SchoolSearchConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A711ED502946493800BBD1FC /* SchoolSearchConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		A711ED432946411000BBD1FC /* SchoolGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolGridView.swift; sourceTree = "<group>"; };
 		A711ED46294641EA00BBD1FC /* SchoolTileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolTileViewModel.swift; sourceTree = "<group>"; };
 		A711ED4D294643DC00BBD1FC /* TileModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileModifier.swift; sourceTree = "<group>"; };
+		A711ED502946493800BBD1FC /* SchoolSearchConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolSearchConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +169,7 @@
 		A711ED1629462AFE00BBD1FC /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				A711ED4F2946492700BBD1FC /* Constants */,
 				A711ED3629462F4500BBD1FC /* Logging */,
 				A711ED2B29462DD000BBD1FC /* UI */,
 			);
@@ -363,6 +366,14 @@
 			path = ViewModifier;
 			sourceTree = "<group>";
 		};
+		A711ED4F2946492700BBD1FC /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				A711ED502946493800BBD1FC /* SchoolSearchConstants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -505,6 +516,7 @@
 				A711ED442946411000BBD1FC /* SchoolGridView.swift in Sources */,
 				A711ED4E294643DC00BBD1FC /* TileModifier.swift in Sources */,
 				A711ED2A29462C8E00BBD1FC /* SchoolSearchViewController.swift in Sources */,
+				A711ED512946493800BBD1FC /* SchoolSearchConstants.swift in Sources */,
 				A711ECE829462A2700BBD1FC /* SceneDelegate.swift in Sources */,
 				A711ED3B29462F6800BBD1FC /* AppConfig.swift in Sources */,
 				A711ED2E29462DE000BBD1FC /* UIViewController+Add.swift in Sources */,

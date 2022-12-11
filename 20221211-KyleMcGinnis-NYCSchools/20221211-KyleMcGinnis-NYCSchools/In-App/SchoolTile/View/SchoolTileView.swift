@@ -45,16 +45,15 @@ struct SchoolTileView: View {
         HStack(alignment: .top) {
             VStack(alignment: .leading) {
                 Text(viewModel.title)
-                    .foregroundColor(.black)
-                HStack{
-                    Text(viewModel.subtitle)
-                        .font(.system(size: 15, weight: .heavy))
-                        .foregroundColor(.green)
-                    Spacer()
-                }
-                .padding(.vertical, 4)
+                    .lineLimit(2)
+                    .foregroundColor(.primary)
+                Text(viewModel.subtitle)
+                    .font(.system(size: 12, weight: .heavy))
+                    .foregroundColor(.secondary)
+
             }
-            Spacer()
+            .multilineTextAlignment(.leading)
+
         }
         
     }
@@ -63,18 +62,24 @@ struct SchoolTileView: View {
         Button(action: {
             self.didTap(viewModel.school)
         }, label: {
-            ZStack(alignment: Alignment(horizontal: .center, vertical: .top)) {
-                VStack(alignment: .leading) {
-                    // TEMP until web images are online
-                    // WebImage(url: vm.imageUrl)
-                    imageView
-                    Spacer()
-                    description
-                        .padding()
+            Group {
+                ZStack(alignment: Alignment(horizontal: .center, vertical: .top)) {
+                    VStack(alignment: .leading, spacing: 0) {
+                        // TEMP until web images are online
+                        // WebImage(url: vm.imageUrl)
+                        HStack {
+                            Spacer()
+                            imageView
+                                .frame(width: 80, height: 80)
+                            Spacer()
+                        }
+                        description
+                            .padding()
+                    }
+                    .frame(height: height)
                 }
-                .frame(height: height)
-                .asTile()
             }
+            .asTile()
         }
         )
     }

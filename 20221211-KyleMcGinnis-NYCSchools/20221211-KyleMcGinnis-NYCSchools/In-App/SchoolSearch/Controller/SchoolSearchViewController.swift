@@ -12,11 +12,13 @@ class SchoolSearchViewController: UIViewController {
     var viewModel: SchoolSearchViewModel = SchoolSearchViewModel()
     
     var navTitle: String {
-        "Schools"
+        SchoolSearchConstants.searchTitle
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.view.backgroundColor = .white
+        view.backgroundColor = .white
         setupNavBar()
         setupHostingVC()
         // Do any additional setup after loading the view.

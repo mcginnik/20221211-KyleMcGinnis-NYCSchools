@@ -12,7 +12,6 @@ import Foundation
 class SchoolSearchWebService: SchoolSearchServiceProtocol {
     
     func findSchools(from urlString: String, completion: @escaping (Result<[School], Error>) -> Void) {
-        print("urlString \(urlString)")
         guard let url = URL(string: urlString) else {
             completion(.failure(NetworkError.URLFormatting))
             return
@@ -25,7 +24,6 @@ class SchoolSearchWebService: SchoolSearchServiceProtocol {
             case .failure(let error):
                 completion(.failure(error))
             case .success(let school):
-                //print(school)
                 completion(.success(school))
             }
         }

@@ -23,7 +23,6 @@ class SchoolSearchViewModel: ObservableObject {
             DispatchQueue.main.async {
                 switch res {
                 case .success(let schools):
-                    print("school \(schools)")
                     self?.schools = schools
                 case .failure(let error):
                     print(error)
@@ -31,6 +30,10 @@ class SchoolSearchViewModel: ObservableObject {
                 self?.isLoading = false
             }
         }
+    }
+    
+    func didTap(_ school: School){
+        Logging.LogMe("... \(school.name)")
     }
     
 }

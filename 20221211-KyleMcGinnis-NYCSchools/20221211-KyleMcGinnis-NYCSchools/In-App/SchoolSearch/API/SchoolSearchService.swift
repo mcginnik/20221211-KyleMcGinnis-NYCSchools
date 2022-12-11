@@ -9,7 +9,6 @@ import Foundation
 
 protocol SchoolSearchServiceProtocol {
     func findSchools(from urlString: String, completion: @escaping (Result<[School], Error>) -> Void)
-//    func fetchImageURL(for breed: String, completion: @escaping (Result<String, Error>) -> Void)
 }
 
 class SchoolSearchService {
@@ -33,19 +32,6 @@ class SchoolSearchService {
             completion(res)
         }
     }
-    
-//    func fetchImageURL(for breed: String, completion: @escaping (Result<String, Error>) -> Void) {
-//        print("findAnimals start \(self.injected)")
-//        self.injected?.fetchImageURL(for: breed) { res in
-//            switch res {
-//            case .success(let urlString):
-//                print("Successfully fetchImageURL \(urlString)")
-//            case .failure(let error):
-//                print("Failed fetchImageURL... \(error)")
-//            }
-//            completion(res)
-//        }
-//    }
     
     static func setup(with service: SchoolSearchServiceProtocol){
         self.shared.injected = service
