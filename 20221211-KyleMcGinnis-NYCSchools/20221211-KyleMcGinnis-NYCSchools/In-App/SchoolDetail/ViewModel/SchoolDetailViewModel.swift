@@ -37,6 +37,10 @@ class SchoolDetailViewModel: ObservableObject {
         school.email
     }
     
+    var fax: String? {
+        school.faxNumber
+    }
+    
     var zip: String {
         school.zip
     }

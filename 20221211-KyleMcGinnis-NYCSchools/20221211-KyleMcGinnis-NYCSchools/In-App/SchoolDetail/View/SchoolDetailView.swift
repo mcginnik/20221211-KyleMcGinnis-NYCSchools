@@ -10,14 +10,20 @@ import MapKit
 
 struct SchoolDetailView: View {
     
+    // MARK: Properties
+    
     @ObservedObject var viewModel: SchoolDetailViewModel
     
     @State private var region: MKCoordinateRegion
+    
+    // MARK: Lifecycle
     
     init(viewModel: SchoolDetailViewModel) {
         self.viewModel = viewModel
         self.region = viewModel.region
     }
+    
+    // MARK: Components
     
     var map: some View {
         Map(coordinateRegion: $region,
@@ -27,7 +33,7 @@ struct SchoolDetailView: View {
             annotationContent: { location in
                 MapPin(coordinate: location.coordinate, tint: .red)
             })
-            .frame(width: 400, height: 300)
+            .frame(height: 300)
     }
     
     var imageView: some View {
@@ -60,20 +66,55 @@ struct SchoolDetailView: View {
         Text(SchoolSearchConstants.searchFailDescription)
     }
     
+    var contactInfo: some View {
+        VStack(alignment: .leading) {
+            if let website = viewModel.website {
+                SchoolInfoRow(text: website, icon: ImageConstants.website)
+            }
+            if let email = viewModel.email {
+                SchoolInfoRow(text: email, icon: ImageConstants.mail)
+                    .textContentType(.emailAddress)
+            }
+            SchoolInfoRow(text: viewModel.phoneNumber, icon: ImageConstants.phone)
+                .textContentType(.telephoneNumber)
+            if let fax = viewModel.fax {
+                SchoolInfoRow(text: fax, icon: ImageConstants.faxMachine)
+                    .textContentType(.telephoneNumber)
+            }
+        }
+    }
+    
     var satScores: some View {
         VStack(alignment: .leading) {
             ForEach(viewModel.sats){ sat in
                 Text("Average SAT Scores:")
                     .font(.headline)
                 Group {
-                    Text("Writing: \(sat.writingAvgScore)")
-                    Text("Math: \(sat.mathAvgScore)")
-                    Text("Reading: \(sat.criticialReadingAvgScore)")
+                    SchoolInfoRow(text: "Writing: \(sat.writingAvgScore)", icon: ImageConstants.graduationCap)
+                    SchoolInfoRow(text: "Math: \(sat.mathAvgScore)", icon: ImageConstants.graduationCap)
+                    SchoolInfoRow(text: "Reading: \(sat.criticialReadingAvgScore)", icon: ImageConstants.graduationCap)
                 }
+                
                 .font(.subheadline)
             }
         }
-
+    }
+    
+    var locationInfo: some View {
+        VStack {
+            VStack {
+                SchoolInfoRow(text: viewModel.address, icon: ImageConstants.pin)
+                SchoolInfoRow(text: viewModel.city)
+                SchoolInfoRow(text: viewModel.stateCode)
+            }
+            .textContentType(.addressCityAndState)
+            map
+                .padding(.horizontal, -16)
+        }
+    }
+    
+    var description: some View {
+        Text(viewModel.description)
     }
     
     var body: some View {
@@ -88,11 +129,13 @@ struct SchoolDetailView: View {
                     VStack(alignment: .leading, spacing: 8) {
                         Text(viewModel.name)
                             .font(.title)
+                        contactInfo
+                        description
                         satScores
-                        Text(viewModel.description)
+                        locationInfo
+                            .padding(.top, 16)
                     }
                     .padding()
-                    map
                     Spacer()
                 }
             }
