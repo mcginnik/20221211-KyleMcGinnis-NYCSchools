@@ -30,12 +30,8 @@ struct SchoolTileView: View {
                     .resizable()
                     .scaledToFit()
             case .failure:
-                Image(systemName: "photo")
+                Image(systemName: ImageConstants.photo)
             @unknown default:
-                // Since the AsyncImagePhase enum isn't frozen,
-                // we need to add this currently unused fallback
-                // to handle any new cases that might be added
-                // in the future:
                 EmptyView()
             }
         }
@@ -65,8 +61,6 @@ struct SchoolTileView: View {
             Group {
                 ZStack(alignment: Alignment(horizontal: .center, vertical: .top)) {
                     VStack(alignment: .leading, spacing: 0) {
-                        // TEMP until web images are online
-                        // WebImage(url: vm.imageUrl)
                         HStack {
                             Spacer()
                             imageView
