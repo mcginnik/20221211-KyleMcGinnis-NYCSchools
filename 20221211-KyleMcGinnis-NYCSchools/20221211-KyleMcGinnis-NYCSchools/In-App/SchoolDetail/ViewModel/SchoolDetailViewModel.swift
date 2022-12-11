@@ -96,7 +96,7 @@ class SchoolDetailViewModel: ObservableObject {
         return MKCoordinateRegion(center: coord, span: MKCoordinateSpan(latitudeDelta: 0.04, longitudeDelta: 0.04))
     }
     
-    @Published var SATs: [SAT] = []
+    @Published var sats: [SAT] = []
            
     // MARK: Lifecycle
     
@@ -113,7 +113,7 @@ class SchoolDetailViewModel: ObservableObject {
             DispatchQueue.main.async {
                 switch res {
                 case .success(let sats):
-                    self?.SATs = sats
+                    self?.sats = sats
                 case .failure(let error):
                     print(error)
                 }

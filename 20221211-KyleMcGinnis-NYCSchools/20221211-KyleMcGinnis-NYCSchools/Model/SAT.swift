@@ -7,18 +7,18 @@
 
 import Foundation
 
-struct SAT {
+struct SAT: Identifiable {
     let id: String
     let dbn: String
     let numberOfStudents: Int
-    let criticialReadingAvgScore: Double
-    let mathAvgScore: Double
-    let writingAvgScore: Double
+    let criticialReadingAvgScore: Int
+    let mathAvgScore: Int
+    let writingAvgScore: Int
     let schoolName: String
 
     // MARK: Lifecycle
 
-    init(id: String, dbn: String, numberOfStudents: Int, criticialReadingAvgScore: Double, mathAvgScore: Double, writingAvgScore: Double, schoolName: String) {
+    init(id: String, dbn: String, numberOfStudents: Int, criticialReadingAvgScore: Int, mathAvgScore: Int, writingAvgScore: Int, schoolName: String) {
         self.id = id
         self.dbn = dbn
         self.numberOfStudents = numberOfStudents
@@ -36,9 +36,9 @@ struct SAT {
         id = (try? values.decode(String.self, forKey: .id)) ?? UUID().uuidString
         dbn = try values.decode(String.self, forKey: .dbn)
         numberOfStudents = Int(try values.decode(String.self, forKey: .num_of_sat_test_takers)) ?? 0
-        criticialReadingAvgScore = Double(try values.decode(String.self, forKey: .sat_critical_reading_avg_score)) ?? 0
-        mathAvgScore = Double(try values.decode(String.self, forKey: .sat_math_avg_score)) ?? 0
-        writingAvgScore = Double(try values.decode(String.self, forKey: .sat_writing_avg_score)) ?? 0
+        criticialReadingAvgScore = Int(try values.decode(String.self, forKey: .sat_critical_reading_avg_score)) ?? 0
+        mathAvgScore = Int(try values.decode(String.self, forKey: .sat_math_avg_score)) ?? 0
+        writingAvgScore = Int(try values.decode(String.self, forKey: .sat_writing_avg_score)) ?? 0
         schoolName = try values.decode(String.self, forKey: .school_name)
     }
     

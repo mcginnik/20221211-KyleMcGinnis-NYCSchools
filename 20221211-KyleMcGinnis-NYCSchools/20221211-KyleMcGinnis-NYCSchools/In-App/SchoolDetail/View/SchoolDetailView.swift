@@ -60,6 +60,22 @@ struct SchoolDetailView: View {
         Text(SchoolSearchConstants.searchFailDescription)
     }
     
+    var satScores: some View {
+        VStack(alignment: .leading) {
+            ForEach(viewModel.sats){ sat in
+                Text("Average SAT Scores:")
+                    .font(.headline)
+                Group {
+                    Text("Writing: \(sat.writingAvgScore)")
+                    Text("Math: \(sat.mathAvgScore)")
+                    Text("Reading: \(sat.criticialReadingAvgScore)")
+                }
+                .font(.subheadline)
+            }
+        }
+
+    }
+    
     var body: some View {
         if viewModel.isLoading {
             loadingView
@@ -69,8 +85,10 @@ struct SchoolDetailView: View {
                     imageView
                         .frame(height: 150)
                         .clipped()
-                    VStack(alignment: .leading) {
+                    VStack(alignment: .leading, spacing: 8) {
                         Text(viewModel.name)
+                            .font(.title)
+                        satScores
                         Text(viewModel.description)
                     }
                     .padding()
